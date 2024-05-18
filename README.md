@@ -1,2 +1,2 @@
 # rwad
-Rwad Platform
+# https://www.linkedin.com/in/hadikarjak
