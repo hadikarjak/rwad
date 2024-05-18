@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Video Viewer</title>
+</head>
+<body>
+  <h1>YouTube Video Viewer</h1>
+  <label for="video-input">Enter YouTube Video URL:</label>
+  <input type="text" id="video-input" placeholder="https://www.youtube.com/watch?v=abcdefghijk">
+  <button onclick="getVideoID()">Get Video ID</button>
+  <p id="video-id"></p>
+
+  <script>
+  function getVideoID() {
+  var videoInput = document.getElementById("video-input");
+  var videoURL = videoInput.value;
+
+  // استخراج معرف الفيديو من الرابط
+  var videoID = "";
+  if (videoURL.includes("youtube.com/watch?v=")) {
+    videoID = videoURL.split("watch?v=")[1];
+    if (videoID.includes("&")) {
+      videoID = videoID.split("&")[0];
+    }
+  } else if (videoURL.includes("youtu.be/")) {
+    videoID = videoURL.split("youtu.be/")[1];
+    if (videoID.includes("?")) {
+      videoID = videoID.split("?")[0];
+    }
+  }
+
+  if (videoID) {
+    document.getElementById("video-id").innerHTML = "Video ID: " + videoID;
+  } else {
+    document.getElementById("video-id").innerHTML = "Invalid YouTube URL";
+  }
+}
+  </script>
+</body>
+</html>

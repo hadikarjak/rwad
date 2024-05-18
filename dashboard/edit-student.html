@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Student</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="imgs/icon.png">
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/framework.css" />
+  <link rel="stylesheet" href="css/master.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page d-flex">
+    <div class="sidebar bg-white p-20 p-relative">
+      <h3 class="p-relative txt-c mt-0">منصة رواد</h3>
+      <ul>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="index.html">
+            <i class="fa-regular fa-chart-bar fa-fw"></i>
+            <span>ملخص</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="category.html">
+            <i class="fa-solid fa-tag fa-fw"></i>
+            <span>الاختصاصات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="courses.html">
+            <i class="fa-regular fa-lightbulb fa-fw"></i>
+            <span>الكورسات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teachers.html">
+            <i class="fa-solid fa-pen-clip fa-fw"></i>
+            <span>المعلمون</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="lessons.html">
+            <i class="fa-solid fa-video fa-fw"></i>
+            <span>الدروس</span>
+          </a>
+        </li>
+        <li>
+          <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="students.html">
+            <i class="fa-solid fa-users fa-fw"></i>
+            <span>الطلاب</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="settings.html">
+            <i class="fa-solid fa-gear fa-fw"></i>
+            <span>إدارة التواصل</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content w-full">
+      <h1 class="p-relative">الطلاب</h1>
+      <div class="settings-page m-20 d-grid gap-20">
+        <!-- Start Add Category Box -->
+        <div class="p-20 bg-white rad-10">
+          <h2 class="mt-0 mb-10 color-violet">تعديل الطلاب</h2>
+          <p class="mt-0 mb-20 c-grey fs-15">ادخل معلومات الطالب الجديدة</p>
+          <form action="">
+            <div class="mb-15">
+              <label class="fs-14 c-grey d-block mb-10" for="first">تعديل اسم الطالب *</label>
+              <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="text" id="first"
+                placeholder="ادخل اسم الطالب" />
+            </div>
+            <div class="mb-15">
+              <label class="fs-14 c-grey d-block mb-10" for="first">تعديل اسم المستخدم *</label>
+              <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="text" id="first"
+                placeholder="ادخل اسم المستخدم" />
+            </div>
+            <div class="mb-15">
+              <label class="fs-14 c-grey d-block mb-10" for="first">تعديل كلمة المرور *</label>
+              <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="number" id="first"
+                placeholder="ادخل كلمة المرور" />
+            </div>
+            <div class="mb-15">
+              <!-- Start Courses Box -->
+              <div class="widgets-control p-20 bg-white rad-10">
+                <p class="mt-0 mb-20 c-grey fs-15">اختر الكورس للطالب :</p>
+                <div class="control d-flex align-center mb-15">
+                  <input type="checkbox" id="one" />
+                  <label for="one">كورس إدخال البيانات</label>
+                </div>
+                <div class="control d-flex align-center mb-15">
+                  <input type="checkbox" id="two" />
+                  <label for="two">كورس جمع البيانات</label>
+                </div>
+                <div class="control d-flex align-center mb-15">
+                  <input type="checkbox" id="three" />
+                  <label for="three">كورس تحليل البيانات</label>
+                </div>
+                <div class="control d-flex align-center mb-15">
+                  <input type="checkbox" id="four" />
+                  <label for="four">كورس تصميم الويب</label>
+                </div>
+              </div>
+              <!-- End Courses Box -->
+            </div>
+
+            <button class="label btn-shape bg-blue c-white btn-h">تعديل معلومات الطالب</button>
+          </form>
+        </div>
+        <!-- End Add Category Box -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

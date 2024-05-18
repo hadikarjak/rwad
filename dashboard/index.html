@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="imgs/icon.png">
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/framework.css" />
+  <link rel="stylesheet" href="css/master.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page d-flex">
+    <div class="sidebar bg-white p-20 p-relative">
+      <h3 class="p-relative txt-c mt-0">منصة رواد</h3>
+      <ul>
+        <li>
+          <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="index.html">
+            <i class="fa-regular fa-chart-bar fa-fw"></i>
+            <span>ملخص</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="category.html">
+            <i class="fa-solid fa-tag fa-fw"></i>
+            <span>الاختصاصات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="courses.html">
+            <i class="fa-regular fa-lightbulb fa-fw"></i>
+            <span>الكورسات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teachers.html">
+            <i class="fa-solid fa-pen-clip fa-fw"></i>
+            <span>المعلمون</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="lessons.html">
+            <i class="fa-solid fa-video fa-fw"></i>
+            <span>الدروس</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="students.html">
+            <i class="fa-solid fa-users fa-fw"></i>
+            <span>الطلاب</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="settings.html">
+            <i class="fa-solid fa-gear fa-fw"></i>
+            <span>إدارة التواصل</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content w-full">
+      <h1 class="p-relative">لوحة التحكم</h1>
+      <div class="wrapper d-grid gap-20">
+
+        <!-- Start Statistics -->
+        <div class="search-items p-20 bg-white rad-10">
+          <h2 class="mt-0 mb-20">إحصائيات</h2>
+          <div class="items-head d-flex space-between c-grey mb-10">
+            <div>النوع</div>
+            <div>الكمية</div>
+          </div>
+          <div class="items d-flex space-between pt-15 pb-15">
+            <span>الإختصاصات</span>
+            <span class="bg-eee fs-13 btn-shape">10</span>
+          </div>
+          <div class="items d-flex space-between pt-15 pb-15">
+            <span>الكورسات</span>
+            <span class="bg-eee btn-shape fs-13">20</span>
+          </div>
+          <div class="items d-flex space-between pt-15 pb-15">
+            <span>الفيديوهات</span>
+            <span class="bg-eee btn-shape fs-13">60</span>
+          </div>
+          <div class="items d-flex space-between pt-15 pb-15">
+            <span>الطلاب</span>
+            <span class="bg-eee btn-shape fs-13">145</span>
+          </div>
+        </div>
+        <!-- End Statistics -->
+
+        <!-- Start Latest Courses -->
+        <div class="latest-news p-20 bg-white rad-10 txt-c-mobile">
+          <h2 class="mt-0 mb-20">آخر ثلاث كورسات</h2>
+          <div class="news-row d-flex align-center">
+            <img src="imgs/news-01.png" alt="" />
+            <div class="info">
+              <h3>كورس إدخال البيانات</h3>
+            </div>
+          </div>
+          <div class="news-row d-flex align-center">
+            <img src="imgs/news-02.png" alt="" />
+            <div class="info">
+              <h3>كورس جمع البيانات</h3>
+            </div>
+          </div>
+          <div class="news-row d-flex align-center">
+            <img src="imgs/news-03.png" alt="" />
+            <div class="info">
+              <h3>كورس الصحة المجتمعية</h3>
+            </div>
+          </div>
+        </div>
+        <!-- End Latest Courses -->
+        <!-- Start Tags -->
+        <div class="tasks p-20 bg-white rad-10">
+          <h2 class="mt-0 mb-20">آخر ثلاث إختصاصات</h2>
+          <div class="task-row between-flex">
+            <div class="info">
+              <h3 class="mt-0 mb-5 fs-15">تكنولوجيا المعلومات</h3>
+            </div>
+          </div>
+          <div class="task-row between-flex">
+            <div class="info">
+              <h3 class="mt-0 mb-5 fs-15">الصحة والتغذية</h3>
+            </div>
+          </div>
+          <div class="task-row between-flex">
+            <div class="info">
+              <h3 class="mt-0 mb-5 fs-15">تنمية بشرية</h3>
+            </div>
+          </div>
+        </div>
+        <!-- End Tasks -->
+
+        <!-- Start Info -->
+        <div class="latest-post p-20 bg-white rad-10 p-relative">
+          <h2 class="mt-0 mb-25">معلومات هامة</h2>
+          <div class="top d-flex align-center">
+            <img class="avatar" src="imgs/avatar.png" alt="" />
+            <div class="info">
+              <span class="d-block mb-5 fw-bold">أحمد زوعة</span>
+              <span class="c-grey">مدير المنصة</span>
+            </div>
+          </div>
+          <div class="post-content txt-c-mobile pt-20 pb-20 mt-20 mb-20">
+            المعلومات في هذه الصفحة عبارة عن نبذة مختصرة يمكنكم الإطلاع على باقي عناصر التحكم من خلال الإيقونات الجانبية
+            .
+          </div>
+          <div class="post-stats between-flex c-grey">
+            <div>
+              <i class="fa-regular fa-heart"></i>
+            </div>
+          </div>
+        </div>
+        <!-- End Info -->
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

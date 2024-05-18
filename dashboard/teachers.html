@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="imgs/icon.png">
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/framework.css" />
+  <link rel="stylesheet" href="css/master.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page d-flex">
+    <div class="sidebar bg-white p-20 p-relative">
+      <h3 class="p-relative txt-c mt-0">منصة رواد</h3>
+      <ul>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="index.html">
+            <i class="fa-regular fa-chart-bar fa-fw"></i>
+            <span>ملخص</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="category.html">
+            <i class="fa-solid fa-tag fa-fw"></i>
+            <span>الاختصاصات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="courses.html">
+            <i class="fa-regular fa-lightbulb fa-fw"></i>
+            <span>الكورسات</span>
+          </a>
+        </li>
+        <li>
+          <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teachers.html">
+            <i class="fa-solid fa-pen-clip fa-fw"></i>
+            <span>المعلمون</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="lessons.html">
+            <i class="fa-solid fa-video fa-fw"></i>
+            <span>الدروس</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="students.html">
+            <i class="fa-solid fa-users fa-fw"></i>
+            <span>الطلاب</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="settings.html">
+            <i class="fa-solid fa-gear fa-fw"></i>
+            <span>إدارة التواصل</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content w-full">
+      <h1 class="p-relative">المعلمون</h1>
+      <div class="settings-page m-20 d-grid gap-20">
+        <!-- Start Add Category Box -->
+        <div class="p-20 bg-white rad-10">
+          <h2 class="mt-0 mb-10 color-violet">معلم جديد</h2>
+          <p class="mt-0 mb-20 c-grey fs-15">ادخل معلومات المعلم</p>
+          <form action="">
+            <div class="mb-15">
+              <label class="fs-14 c-grey d-block mb-10" for="first">اسم المعلم *</label>
+              <input class="b-none border-ccc p-10 rad-6 d-block w-full" type="text" id="first"
+                placeholder="ادخل اسم المعلم" />
+            </div>
+            <div class="mb-15">
+              <label class="fs-14 c-grey d-block mb-10" for="category">إختصاص المعلم *</label>
+              <select class="b-none bg-white border-ccc p-10 rad-6 d-block w-full" name="" id="category">
+                <option value="تكنولوجيا">تكنولوجيا</option>
+                <option value="صحة">صحة</option>
+                <option value="تغذية">تغذية</option>
+                <option value="تنمية">تنمية</option>
+              </select>
+            </div>
+            <div class="mb-15">
+              <label class="fs-14 c-grey d-block mb-10" for="img">صورة المعلم 500*500</label>
+              <input class="b-none bg-white border-ccc p-10 rad-6 d-block w-full" type="file" id="img" name="" />
+            </div>
+            <textarea class="close-message p-10 rad-6 d-block w-full mb-15"
+            placeholder="نبذة مختصرة عن المعلم"></textarea>
+            <button class="label btn-shape bg-blue c-white btn-h">إضافة المعلم</button>
+          </form>
+        </div>
+        <!-- End Add Category Box -->
+      </div>
+      <!-- Start Tags Table -->
+      <div class="projects p-20 bg-white rad-10 m-20">
+        <h2 class="mt-0 mb-20">كل المعلمين</h2>
+        <div class="responsive-table">
+          <table class="fs-15 w-full">
+            <thead>
+              <tr>
+                <td>اسم المعلم</td>
+                <td>تاريخ الإضافة</td>
+                <td>إختصاص المعلم</td>
+                <td>تعديل</td>
+                <td>حذف</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>هادي كرجك</td>
+                <td>13 May 2022</td>
+                <td>تكنولوجيا</td>
+                <td><button class="label btn-shape bg-violet c-white btn-update arrow">تعديل</button></td>
+                <td><button class="label btn-shape bg-red c-white btn-delete arrow">حذف</button></td>
+              </tr>
+              <tr>
+                <td>أحمد</td>
+                <td>10 May 2024</td>
+                <td>طب</td>
+                <td><button class="label btn-shape bg-violet c-white btn-update arrow">تعديل</button></td>
+                <td><button class="label btn-shape bg-red c-white btn-delete arrow">حذف</button></td>
+              </tr>
+              <tr>
+                <td>نوار</td>
+                <td>10 May 2020</td>
+                <td>هندسة</td>
+                <td><button class="label btn-shape bg-violet c-white btn-update arrow">تعديل</button></td>
+                <td><button class="label btn-shape bg-red c-white btn-delete arrow">حذف</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- End Tags Table -->
+    </div>
+  </div>
+</body>
+
+</html>
