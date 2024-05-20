@@ -5,10 +5,12 @@
 
 
   <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-   <div id="player" class="responsive-iframe"></div>
-  <button class="btn-play" id="pause-button">pausee</button>
-  <button class="btn-play" id="play-button">playy</button>
-  <button class="btn-play" id="stop-button">stopp</button>
+    <iframe id="player" class="responsive-iframe"
+                        src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
+                        frameborder="0" allowfullscreen></iframe>
+  <button class="btn-play" id="pause-button">p</button>
+  <button class="btn-play" id="play-button">play</button>
+  <button class="btn-play" id="stop-button">s</button>
   <script>
     // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
@@ -22,7 +24,7 @@
     var player;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
-        videoId: 'n5MG8o1uDkE',
+      
         playerVars: {
           'playsinline': 1
         },
