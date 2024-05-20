@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Repository</title>
-</head>
-<body>
+<html>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <iframe id="player" class="responsive-iframe"
+                        src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
+                        frameborder="0" allowfullscreen></iframe>
+						<button class="btn-play" id="pause-button" onclick="player.pauseVideo()" >pause</button>
+                        <button class="btn-play" id="play-button" onclick="player.playVideo()">play</button>
+                        <button class="btn-play" id="stop-button">stop</button>
 
+    <script>
+		
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
 
-	<a href='javascript:void(0);' id="videoplay">Click</a>
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  <iframe id="player" class="responsive-iframe"
-  src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
-  frameborder="0" allowfullscreen></iframe>	
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+    
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type='text/javascript'>
-		$(document).ready(function(){
-			$("#videoplay").click(function(){
-				$(this).hide();
-				$('iframe')[0].src += '&autoplay=1';
-			});
-		});
-	</script>
-</body>
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+  </body>
 </html>
