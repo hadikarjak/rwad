@@ -53,14 +53,3 @@
     function stopVideo() {
       player.stopVideo();
     }
-
-
-
-    seconds = 0;
- 
-  function seek(sec) {
-    if ([player]) {
-      seconds += sec;
-      player.seekTo(seconds, true);
-    }
-  }
