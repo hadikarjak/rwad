@@ -2,7 +2,11 @@
 <html>
   <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+   
+      <iframe id="player"  class="responsive-iframe"
+      src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
+      frameborder="0" allowfullscreen></iframe>
+
     <button class="btn-play" id="pause-button">pause</button>
     <button class="btn-play" id="play-button">play</button>
     <button class="btn-play" id="stop-button">stop</button>
@@ -21,7 +25,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+     
           playerVars: {
             'playsinline': 1
           },
