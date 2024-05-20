@@ -34,24 +34,6 @@
           }
         });
       }
-      var player,
-  seconds = 0;
-function onYouTubeIframeAPIReady() {
-  
-  console.log("player");
-  player = new YT.Player("player", {
-    events: {
-      onReady: onPlayerReady,
-    },
-  });
-}
-
-function seek(sec) {
-  if (player) {
-    seconds += sec;
-    player.seekTo(seconds, true);
-  }
-}
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
         event.target.playVideo();
