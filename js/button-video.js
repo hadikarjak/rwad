@@ -10,7 +10,7 @@
     var player;
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
-      
+       vidoId:'n5MG8o1uDkE',
         playerVars: {
           'playsinline': 1
         },
