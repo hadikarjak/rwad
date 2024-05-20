@@ -1,82 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-      <iframe id="player" class="responsive-iframe"
-      src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
-      frameborder="0" allowfullscreen></iframe>
-    <button class="btn-play" id="play-button" onclick="seek(1)">playy</button>
-    <button class="btn-play" id="pause-button">pause</button>
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+<div class="iframe">
+  <iframe id="iframe1" width="360" height="203" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLb-Mg8r29XuOV9CbkXVDQ5NdQG__WbJqI&amp;controls=0&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  <a href="#" onclick="iframe1play();return false;">
+    <div id="iframe1play">
+playyy
+    </div>
+  </a>
+</div>
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-    
-          playerVars: {
-            'playsinline': 1
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
+<script>
 
 
 
-      //My code
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-      seconds = 0;
+function onYouTubePlayerAPIReady() {
+    iframe1 = new YT.Player('iframe1');
+} 
 
- 
- function seek(sec) {
-   if ([player]) {
-     seconds += sec;
-     player.seekTo(seconds, true);
-   }
- }
-      function onPlayerReady(event) {
-      event.target.playVideo();
-      var playButton = document.getElementById("play-button");
-      playButton.addEventListener("click", function () {
-        player.playVideo();
-      });
+function iframe1play() {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        iframe1.pauseVideo();
+        document.getElementById("iframe1").style.opacity = "0";
+    } else {
+        iframe1.playVideo();
+        document.getElementById("iframe1").style.opacity = "1";
+    }   
+}
 
-      var pauseButton = document.getElementById("pause-button");
-      pauseButton.addEventListener("click", function () {
-        player.pauseVideo();
-      });
-
-      var stopButton = document.getElementById("stop-button");
-      stopButton.addEventListener("click", function () {
-        player.stopVideo();
-      });
-    }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
-  </body>
-</html>
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
