@@ -85,13 +85,16 @@
                         src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
                         frameborder="0" allowfullscreen></iframe>
                 </div>
-                  <center>
-                    <div class="btns" > 
+               <center>
+                    <div class="btns">
                         <button class="btn-play" type="button" onclick="seek(15)"><i
                                 class="fas fa-fast-forward fa-fw"></i></button>
-                        <button class="btn-play" id="pause-button"><i class="fas fa-pause fa-fw"></i></button>
-                        <a href="#video" class="btn-play" id="play-button"><i class="fas fa-play fa-fw"></i></a>
-                        <button class="btn-play" id="stop-button"><i class="fas fa-stop fa-fw"></i></button>
+                        <button class="btn-play" id="pause-button" onclick="onPauseReady()"><i
+                                class="fas fa-pause fa-fw"></i></button>
+                        <button class="btn-play" id="play-button" onclick="onPlayerReady()"><i
+                                class="fas fa-play fa-fw"></i></button>
+                        <button class="btn-play" id="stop-button" onclick="onStopReady()"><i
+                                class="fas fa-stop fa-fw"></i></button>
                         <button class="btn-play" type="button" onclick="seek(-15)"><i
                                 class="fas fa-fast-backward fa-fw"></i></button>
                     </div>
