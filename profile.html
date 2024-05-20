@@ -26,7 +26,7 @@
 
     <div class="header" id="header">
         <div class="container">
-            <a href="#" class="logo"> <img src="images/logo.png" width="100px" alt="يتم تحميل الصورة !"></a>
+            <a href="#" class="logo"> <img src="/images/logo.png" width="100px" alt="يتم تحميل الصورة !"></a>
             <ul class="main-nav" style=" padding: 0;">
                 <li>
                     <a class="otherlink" style="height: 120px;" href="#">معلومات الطالب</a>
@@ -81,23 +81,61 @@
             <div class="holder">
                 <div class="content">
                     <div class="overlay"></div>
-                    <iframe id="video" class="responsive-iframe"
+                    <iframe id="youtube-player" class="responsive-iframe"
                         src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
                         frameborder="0" allowfullscreen></iframe>
                 </div>
-               <center>
-                    <div class="btns">
-                        <button class="btn-play" type="button" onclick="seek(15)"><i
-                                class="fas fa-fast-forward fa-fw"></i></button>
-                        <button class="btn-play" id="pause-button" onclick="onPauseReady()"><i
-                                class="fas fa-pause fa-fw"></i></button>
-                      <a class="btn-play" id="play-button" onclick="onPlayerReady(event)"><i class="fas fa-play fa-fw"></i></a>
-                        <button class="btn-play" id="stop-button" onclick="onStopReady()"><i
-                                class="fas fa-stop fa-fw"></i></button>
-                        <button class="btn-play" type="button" onclick="seek(-15)"><i
-                                class="fas fa-fast-backward fa-fw"></i></button>
-                    </div>
+                <center>
+                    <button id="play-btn">Play</button>
+                    <button id="pause-btn">Pause</button>
+                    <button id="stop-btn">Stop</button>
                 </center>
+                <script>
+                    var player;
+                    var playerState = 'stopped';
+                
+                    function onYouTubeIframeAPIReady() {
+                      player = new YT.Player('youtube-player', {
+                        events: {
+                          'onStateChange': onPlayerStateChange
+                        }
+                      });
+                    }
+                
+                    function onPlayerStateChange(event) {
+                      playerState = event.data;
+                    }
+                
+                    function playVideo() {
+                      if (playerState === YT.PlayerState.PAUSED) {
+                        player.playVideo();
+                      } else {
+                        player.loadVideoById('n5MG8o1uDkE');
+                      }
+                      playerState = 'playing';
+                    }
+                
+                    function pauseVideo() {
+                      player.pauseVideo();
+                      playerState = 'paused';
+                    }
+                
+                    function stopVideo() {
+                      player.stopVideo();
+                      playerState = 'stopped';
+                    }
+                
+                    // Load the YouTube API
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                
+                    // Attach event listeners to the buttons
+                    document.getElementById('play-btn').addEventListener('click', playVideo);
+                    document.getElementById('pause-btn').addEventListener('click', pauseVideo);
+                    document.getElementById('stop-btn').addEventListener('click', stopVideo);
+                  </script>
                 <div class="preview">
                     <div class="info">
                         <div class="list">
@@ -236,6 +274,6 @@
 </body>
 <!-- MAIN JS -->
 <script src="js/main.js "></script>
-<script src="js/button-video.js "></script>
+
 
 </html>
