@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>YouTube Video Viewer</title>
-</head>
-<body>
-  <h1>YouTube Video Viewer</h1>
-  <label for="video-input">Enter YouTube Video URL:</label>
-  <input type="text" id="video-input" placeholder="https://www.youtube.com/watch?v=abcdefghijk">
-  <button onclick="getVideoID()">Get Video ID</button>
-  <p id="video-id"></p>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+    <button class="btn-play" id="play-button">ddddddd<i class="fas fa-play fa-fw"></i></button>
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
 
-  <script>
-  function getVideoID() {
-  var videoInput = document.getElementById("video-input");
-  var videoURL = videoInput.value;
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // استخراج معرف الفيديو من الرابط
-  var videoID = "";
-  if (videoURL.includes("youtube.com/watch?v=")) {
-    videoID = videoURL.split("watch?v=")[1];
-    if (videoID.includes("&")) {
-      videoID = videoID.split("&")[0];
-    }
-  } else if (videoURL.includes("youtu.be/")) {
-    videoID = videoURL.split("youtu.be/")[1];
-    if (videoID.includes("?")) {
-      videoID = videoID.split("?")[0];
-    }
-  }
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
 
-  if (videoID) {
-    document.getElementById("video-id").innerHTML = "Video ID: " + videoID;
-  } else {
-    document.getElementById("video-id").innerHTML = "Invalid YouTube URL";
-  }
-}
-  </script>
-</body>
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+        var playButton = document.getElementById("play-button");
+  playButton.addEventListener("click", function () {
+    player.playVideo();
+  });
+
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+  </body>
 </html>
