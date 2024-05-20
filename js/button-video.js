@@ -8,6 +8,8 @@ function onYouTubePlayerAPIReady() {
     events: {
       // call this function when player is ready to use
       onReady: onPlayerReady,
+      onPause:onPauseReady,
+      onStop:onStopReady,
     },
   });
 }
@@ -18,12 +20,15 @@ function onPlayerReady(event) {
   playButton.addEventListener("click", function () {
     player.playVideo();
   });
-
+}
+function onPauseReady(event) {
   var pauseButton = document.getElementById("pause-button");
   pauseButton.addEventListener("click", function () {
     player.pauseVideo();
   });
 
+}
+function onStopReady(event) {
   var stopButton = document.getElementById("stop-button");
   stopButton.addEventListener("click", function () {
     player.stopVideo();
@@ -38,6 +43,8 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     events: {
       onReady: onPlayerReady,
+      onPause:onPauseReady,
+      onStop:onStopReady,
     },
   });
 }
