@@ -1,33 +1,26 @@
-<div class="iframe">
-  <iframe id="iframe1" width="360" height="203" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLb-Mg8r29XuOV9CbkXVDQ5NdQG__WbJqI&amp;controls=0&amp;showinfo=0&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-  <a href="#" onclick="iframe1play();return false;">
-    <div id="iframe1play">
-playyy
-    </div>
-  </a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Repository</title>
+</head>
+<body>
 
 
-<script>
+	<a href='javascript:void(0);' id="videoplay">Click</a>
 
+  <iframe id="player" class="responsive-iframe"
+  src="https://www.youtube.com/embed/n5MG8o1uDkE?rel=0&enablejsapi=1&html5=1&showinfo=0"
+  frameborder="0" allowfullscreen></iframe>	
 
-
-function onYouTubePlayerAPIReady() {
-    iframe1 = new YT.Player('iframe1');
-} 
-
-function iframe1play() {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-        iframe1.pauseVideo();
-        document.getElementById("iframe1").style.opacity = "0";
-    } else {
-        iframe1.playVideo();
-        document.getElementById("iframe1").style.opacity = "1";
-    }   
-}
-
-var tag = document.createElement('script');
-tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$("#videoplay").click(function(){
+				$(this).hide();
+				$('iframe')[0].src += '&autoplay=1';
+			});
+		});
+	</script>
+</body>
+</html>
