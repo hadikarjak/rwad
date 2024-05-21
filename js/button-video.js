@@ -30,8 +30,13 @@ function onPlayerReady(event) {
     player.pauseVideo();
   });
 }
-
- 
+ seconds = 0;
+ function seek(sec) {
+   if ([player]) {
+     seconds += sec;
+     player.seekTo(seconds, true);
+   }
+ }
 // Inject YouTube API script
 var tag = document.createElement("script");
 tag.src = "//www.youtube.com/player_api";
