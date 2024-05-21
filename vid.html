@@ -66,6 +66,8 @@ https://css-tricks.com/svg-tabs-using-svg-shape-template/
   <svg class="button" id="pause-button">
     <use xlink:href="#pause-button-shape">
   </svg>
+  <button style="background-color: #538dd7" class="btn-play" id="mute-button"><i class="fas fa-volume-mute"></i>mute</button>
+  <button style="background-color: #538dd7" class="btn-play" id="unmute-button"><i class="fas fa-volume-mute"></i>unmute</button>
 </div>
 <script>
 
@@ -96,6 +98,15 @@ function onPlayerReady(event) {
   pauseButton.addEventListener("click", function () {
     player.pauseVideo();
   });
+  var muteButton = document.getElementById("mute-button");
+  muteButton.addEventListener("click", function () {
+    player.mute();
+  });
+  var unmuteButton = document.getElementById("unmute-button");
+  unmuteButton.addEventListener("click", function () {
+    player.unMute();
+  });
+
 }
 
 // Inject YouTube API script
