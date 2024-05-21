@@ -37,6 +37,8 @@ function onPlayerReady(event) {
   unmuteButton.addEventListener("click", function () {
     player.unMute();
   });
+     // Start updating the progress bar
+        setInterval(updateProgressBar, 1000);
 }
 seconds = 0;
 function seek(sec) {
@@ -45,7 +47,13 @@ function seek(sec) {
     player.seekTo(seconds, true);
   }
 }
-
+    // Update the progress bar
+    function updateProgressBar() {
+      var currentTime = player.getCurrentTime();
+      var duration = player.getDuration();
+      var progress = (currentTime / duration) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+    }
 // Inject YouTube API script
 var tag = document.createElement("script");
 tag.src = "//www.youtube.com/player_api";
