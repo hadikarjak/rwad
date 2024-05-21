@@ -29,10 +29,7 @@ function onPlayerReady(event) {
   stopButton.addEventListener("click", function () {
     player.stopVideo();
   });
-  var muteButton = document.getElementById("mute-button");
-  muteButton.addEventListener("click", function () {
-    player.mute();
-  });
+ 
   var unmuteButton = document.getElementById("unmute-button");
   unmuteButton.addEventListener("click", function () {
     player.unMute();
