@@ -83,7 +83,13 @@
                     <div class="overlay"></div>
                     <iframe id="video" class="responsive-iframe" src="//www.youtube.com/embed/0zIr40rS8M8?enablejsapi=1&html5=1&mute=1" frameborder="0" allowfullscreen></iframe>                </div>
                 <center>
+                    <style>
+                        .btn-play{
+                            font-size: 11px;
+                        }
+                    </style>
                     <div class="btns">
+                        <button style="background-color: #538dd7;" class="btn-play" id="unmute-button"><i class="fas fa-volume-up"></i></button>
                         <button class="btn-play" type="button" onclick="seek(15)"><i
                                 class="fas fa-fast-forward fa-fw"></i></button>
                         <button class="btn-play" id="pause-button"><i class="fas fa-pause fa-fw"></i></button>
@@ -91,6 +97,7 @@
                         <button class="btn-play" id="stop-button"><i class="fas fa-stop fa-fw"></i></button>
                         <button class="btn-play" type="button" onclick="seek(-15)"><i
                                 class="fas fa-fast-backward fa-fw"></i></button>
+                        <button style="background-color: #538dd7" class="btn-play" id="mute-button"><i class="fas fa-volume-mute"></i></button>
                     </div>
                 </center>
                 <div class="preview">
