@@ -9,8 +9,8 @@ function onYouTubePlayerAPIReady() {
   player = new YT.Player("video", {
     events: {
       // call this function when player is ready to use
-      onReady: onPlayerReady
-    }
+      onReady: onPlayerReady,
+    },
   });
 }
 
@@ -29,20 +29,23 @@ function onPlayerReady(event) {
   stopButton.addEventListener("click", function () {
     player.stopVideo();
   });
- 
+  var muteButton = document.getElementById("mute-button");
+  muteButton.addEventListener("click", function () {
+    player.mute();
+  });
   var unmuteButton = document.getElementById("unmute-button");
   unmuteButton.addEventListener("click", function () {
     player.unMute();
   });
 }
+seconds = 0;
+function seek(sec) {
+  if ([player]) {
+    seconds += sec;
+    player.seekTo(seconds, true);
+  }
+}
 
- seconds = 0;
- function seek(sec) {
-   if ([player]) {
-     seconds += sec;
-     player.seekTo(seconds, true);
-   }
- }
 // Inject YouTube API script
 var tag = document.createElement("script");
 tag.src = "//www.youtube.com/player_api";
