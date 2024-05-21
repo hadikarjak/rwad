@@ -1,3 +1,5 @@
+// https://developers.google.com/youtube/iframe_api_reference
+
 // global variable for the player
 var player;
 
@@ -29,19 +31,23 @@ function onPlayerReady(event) {
   });
 }
 
-function onPlayerReady(event) {
-  event.target.playVideo();
+  seconds = 0;
+function onYouTubeIframeAPIReady() {
+  
+  console.log("player");
+  player = new YT.Player("player", {
+    events: {
+      onReady: onPlayerReady,
+    },
+  });
 }
-seconds = 0;
-
 
 function seek(sec) {
-if ([player]) {
-seconds += sec;
-player.seekTo(seconds, true);
+  if (player) {
+    seconds += sec;
+    player.seekTo(seconds, true);
+  }
 }
-}
-
 // Inject YouTube API script
 var tag = document.createElement("script");
 tag.src = "//www.youtube.com/player_api";
