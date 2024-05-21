@@ -27,7 +27,7 @@ function onPlayerReady(event) {
   });
   var stopButton = document.getElementById("stop-button");
   stopButton.addEventListener("click", function () {
-    player.pauseVideo();
+    player.stopVideo();
   });
 }
  seconds = 0;
