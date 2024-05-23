@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>student-profile</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="imgs/icon.png">
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/framework.css" />
+  <link rel="stylesheet" href="css/master.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="page d-flex">
+    <div class="sidebar bg-white p-20 p-relative">
+      <h3 class="p-relative txt-c mt-0">منصة رواد</h3>
+      <ul>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="index.html">
+            <i class="fa-regular fa-chart-bar fa-fw"></i>
+            <span>ملخص</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="category.html">
+            <i class="fa-solid fa-tag fa-fw"></i>
+            <span>الاختصاصات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="courses.html">
+            <i class="fa-regular fa-lightbulb fa-fw"></i>
+            <span>الكورسات</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teachers.html">
+            <i class="fa-solid fa-pen-clip fa-fw"></i>
+            <span>المعلمون</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="lessons.html">
+            <i class="fa-solid fa-video fa-fw"></i>
+            <span>الدروس</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="students.html">
+            <i class="fa-solid fa-users fa-fw"></i>
+            <span>الطلاب</span>
+          </a>
+        </li>
+        <li>
+          <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="all-students.html">
+            <i class="fa-solid fa-user-shield fa-fw"></i>
+            <span>إدارة الطلبة</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="settings.html">
+            <i class="fa-solid fa-gear fa-fw"></i>
+            <span>إدارة التواصل</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content w-full">
+      <h1 class="p-relative">سجل الطالب</h1>
+      <div class="settings-page m-20 d-grid gap-20">
+        <!-- Start Welcome Widget -->
+        <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
+          <div class="intro p-20 d-flex space-between bg-eee">
+            <div>
+              <h2 class="m-0">أهلا بك في صفحة :</h2>
+              <p class="c-grey mt-5 names">هادي نادر كرجك</p>
+            </div>
+            <img decoding="async" class="hide-mobile" src="imgs/classroom.png" alt="" />
+          </div>
+          <img decoding="async" src="imgs/student.png" alt="" class="avatar" />
+          <div class="body txt-c d-flex p-20 mt-20 mb-20 block-mobile">
+            <div>هادي نادر كرجك<span class="d-block c-grey fs-14 mt-10">طالب</span></div>
+            <div>10 <span class="d-block c-grey fs-14 mt-10">كورسات</span></div>
+          </div>
+          <a href="edit-student.html" class="visit d-block fs-14 bg-blue c-white w-fit btn-shape">تعديل <i
+              class="fa-solid fa-user-pen"></i></a>
+        </div>
+        <!-- End Welcome Widget -->
+      </div>
+
+      <!-- Start Tags Table -->
+      <div class="projects p-20 bg-white rad-10 m-20">
+        <h2 class="mt-0 mb-20">سجل تسجيل الدخول :</h2>
+        <div class="responsive-table">
+          <table class="fs-15 w-full">
+            <thead>
+              <tr>
+                <td>المتصفح</td>
+                <td>أول دخول</td>
+                <td>آخر دخول</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>chrome</td>
+                <td>13 May 2022</td>
+                <td>155 Jul 2022</td>
+              </tr>
+              <tr>
+                <td>Firefox</td>
+                <td>13 May 2022</td>
+                <td>14 Jul 2022</td>
+              </tr>
+              <tr>
+                <td>Edge</td>
+                <td>13 May 2022</td>
+                <td>16 Aug 2022</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- End Tags Table -->
+    </div>
+  </div>
+</body>
+<script src="js/idyoutube.js"></script>
+
+</html>
